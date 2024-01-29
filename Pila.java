@@ -41,7 +41,4 @@ public class Pila implements InterfazUVGStack<Integer>{
             return null;
         }
     }
-
-
-
 }
