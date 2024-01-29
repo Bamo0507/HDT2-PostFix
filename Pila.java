@@ -21,4 +21,27 @@ public class Pila implements InterfazUVGStack<Integer>{
         numeros.add(numero);
     }
 
+    public Integer pop() {
+        if (!isEmpty()) {
+            // Obtiene el último elemento
+            Integer poppedValue = numeros.lastElement();
+            // Elimina el último elemento
+            numeros.remove(numeros.size() - 1);
+            return poppedValue;
+        }
+        // Pila vacía
+        return null;
+    }
+
+    public Integer top() {
+        if (!isEmpty()) {
+            // Obtiene el último elemento sin eliminarlo
+            return numeros.lastElement();
+        }
+        // Pila vacía
+        return null;
+    }
+
+
+
 }
