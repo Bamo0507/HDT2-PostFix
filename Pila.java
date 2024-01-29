@@ -37,9 +37,9 @@ public class Pila implements InterfazUVGStack<Integer>{
         if (!isEmpty()) {
             // Obtiene el último elemento sin eliminarlo
             return numeros.lastElement();
+        } else{
+            return null;
         }
-        // Pila vacía
-        return null;
     }
 
 
