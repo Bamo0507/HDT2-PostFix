@@ -1,3 +1,9 @@
+//Bryan Alberto Martínez Orellana 23542
+//Adriana Sophia Palacios Contreras 23044
+//Fecha de Creación: 28/01/2024
+//Fecha de Última Modificacion: 30/01/2024
+//Hoja de Trabajo 2 - Calculadora de Operaciones PostFix
+
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -45,6 +51,9 @@ public class PilaTest {
         assertFalse(pila.isEmpty());
     }
 
+    /**
+     * Prueba el método pop al eliminar el elemento de la cima de la pila.
+     */
     @Test
     public void testPop() {
          // Inserta dos elementos en la pila
