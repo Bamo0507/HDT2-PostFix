@@ -13,8 +13,12 @@ public class PostfixCalc {
         boolean operadorValido = true;
         int contadorDigitos = 0;
         int contadorOperandos = 0;
+
+        // Leemos el archivo y obtenemos un vector con los elementos
         Vector<String> texto = leerTexto("datos.txt");
+        // Inicializamos la pila
         Pila pila = new Pila(); 
+        // Contamos la cantidad de dígitos y operandos
         for(String elemento: texto){
             for(char c: elemento.toCharArray()){
                 if(esDigito(c)){
@@ -24,6 +28,9 @@ public class PostfixCalc {
                 }
             }
         }
+
+        
+    // Verificamos si la cantidad de dígitos es uno más que la de operandos
         if(contadorDigitos - contadorOperandos == 1){
             for(String elemento: texto){
                 if(!operadorValido){
