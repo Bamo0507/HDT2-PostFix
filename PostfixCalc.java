@@ -18,14 +18,31 @@ public class PostfixCalc {
         System.out.println("-------------------------------------------");
         System.out.println("Hola querido usuario.\n" + "A continuación, estaremos calculando su operación ingresada.");
         System.out.println("-------------------------------------------");
+
+        // Leemos el archivo y obtenemos un vector con los elementos
+        int resultadoOperacion = calcular("datos.txt");
+        //Mensaje Final
+        System.out.println("***********************************************");
+        System.out.println("--- El resultado de su operación es: " + resultadoOperacion + ". ---");
+        System.out.println("***********************************************");
+        System.out.println();
+
+    }
+    
+
+    
+    /** 
+     * @param archivo
+     * @return int
+     */
+    public static int calcular(String archivo){
+        Vector<String> texto = leerTexto(archivo);
         //Se crean las variables ha implementar
         int resultado = 0;
         boolean operadorValido = true;
         int contadorDigitos = 0;
         int contadorOperandos = 0;
 
-        // Leemos el archivo y obtenemos un vector con los elementos
-        Vector<String> texto = leerTexto("datos.txt");
         // Inicializamos la pila
         Pila pila = new Pila(); 
         // Contamos la cantidad de dígitos y operandos
@@ -38,8 +55,6 @@ public class PostfixCalc {
                 }
             }
         }
-
-        
     // Verificamos si la cantidad de dígitos es uno más que la de operandos
         if(contadorDigitos - contadorOperandos == 1){
             for(String elemento: texto){
@@ -92,15 +107,8 @@ public class PostfixCalc {
         } else{
             System.out.println("No se cuenta con la cantidad adecuada de dígitos u operadores.");
         }
-        //Mensaje Final
-        System.out.println("***********************************************");
-        System.out.println("--- El resultado de su operación es: " + resultado + ". ---");
-        System.out.println("***********************************************");
-        System.out.println();
-
+        return resultado;
     }
-    
-    
     /** 
      * @param archivo
      * @return Vector<String>
@@ -137,3 +145,4 @@ public class PostfixCalc {
     }
 
 }
+
